@@ -3,7 +3,7 @@ import { FaHome } from "react-icons/fa";
 import Button from "./Button";
 
 const Learn = () => {
-  const [allData,setAllData] = useState([]);
+  const [allData, setAllData] = useState<{ _id: string; english: string; bangla: string }[]>([]);
   useEffect(() => {
     const fetchData = async () => {
       try {

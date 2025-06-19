@@ -3,14 +3,17 @@ import { FaHome } from "react-icons/fa";
 import Button from "./Button";
 
 const AddNew = () => {
-  const handleSubmit = async (event) => {
+  // Add explicit type for event
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    const form = event.target;
+    const form = event.target as HTMLFormElement;
+    const englishInput = form.elements.namedItem("field1") as HTMLInputElement;
+    const banglaInput = form.elements.namedItem("field2") as HTMLInputElement;
 
     const data = {
-      english: form[0].value,
-      bangla: form[1].value,
+      english: englishInput.value,
+      bangla: banglaInput.value,
     };
 
     try {
@@ -48,6 +51,7 @@ const AddNew = () => {
           <input
             type="text"
             id="field1"
+            name="field1"
             className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-all"
             placeholder="Enter the english word"
             required
@@ -64,6 +68,7 @@ const AddNew = () => {
           <input
             type="text"
             id="field2"
+            name="field2"
             className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-all"
             placeholder="Enter the bangla word"
             required

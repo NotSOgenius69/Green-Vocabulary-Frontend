@@ -1,7 +1,5 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Button from "./Button";
-import { FaHome } from "react-icons/fa";
 
 const PAGE_SIZE = 5;
 
@@ -23,7 +21,9 @@ const Test = () => {
   }, []);
 
   // Handle submit for word count
-  const handleWordCountSubmit = async (event: any) => {
+  const handleWordCountSubmit = async (
+    event: React.FormEvent<HTMLFormElement>
+  ) => {
     event.preventDefault();
     const count = parseInt(wordCount, 10);
 
@@ -42,7 +42,7 @@ const Test = () => {
       if (result.success) {
         // Prepare rows for test
         setAllWords(
-          result.data.map((word, idx) => ({
+          result.data.map((word: { english: string; bangla: string }, idx: number) => ({
             id: idx + 1,
             label: word.english,
             value: "",
@@ -70,7 +70,7 @@ const Test = () => {
   };
 
   // Handle input change in test rows
-  const handleChange = (id, value) => {
+  const handleChange = (id: number, value: string) => {
     setAllWords(
       allWords.map((row) => (row.id === id ? { ...row, value } : row))
     );
