@@ -7,7 +7,7 @@ const Learn = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("http://localhost:3000/learn");
+        const response = await fetch("https://green-vocabulary-backend.onrender.com/learn");
 
         if (response.ok) {
           const data = await response.json();

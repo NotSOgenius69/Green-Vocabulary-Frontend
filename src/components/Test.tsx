@@ -31,7 +31,7 @@ const Test = () => {
     try {
       const token = localStorage.getItem("token");
       const response = await fetch(
-        `http://localhost:3000/test?limit=${count}`,
+        `https://green-vocabulary-backend.onrender.com/test?limit=${count}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,

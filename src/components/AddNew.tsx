@@ -17,7 +17,7 @@ const AddNew = () => {
     };
 
     try {
-      const response = await fetch("http://localhost:3000/add-new", {
+      const response = await fetch("https://green-vocabulary-backend.onrender.com/add-new", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
