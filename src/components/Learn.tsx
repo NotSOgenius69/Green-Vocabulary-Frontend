@@ -7,7 +7,7 @@ const Learn = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("https://green-vocabulary-backend.onrender.com/learn");
+        const response = await fetch(`${import.meta.env.VITE_BACKEND_API}/learn`);
 
         if (response.ok) {
           const data = await response.json();

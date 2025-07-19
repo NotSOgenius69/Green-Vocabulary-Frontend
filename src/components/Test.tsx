@@ -31,7 +31,7 @@ const Test = () => {
     try {
       const token = localStorage.getItem("token");
       const response = await fetch(
-        `https://green-vocabulary-backend.onrender.com/test?limit=${count}`,
+        `${import.meta.env.VITE_BACKEND_API}/test?limit=${count}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -64,7 +64,6 @@ const Test = () => {
       ...row,
       isCorrect: row.value === row.answer,
     }));
-    console.log(`test theke pathaisi ${results}`);
     //Passing the result to Result page
     navigate("/results", { state: { results } });
   };

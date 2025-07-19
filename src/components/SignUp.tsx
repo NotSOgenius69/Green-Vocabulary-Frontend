@@ -18,7 +18,7 @@ const SignUp = () => {
         };
     
         try {
-          const response = await fetch("https://green-vocabulary-backend.onrender.com/auth/signup", {
+          const response = await fetch(`${import.meta.env.VITE_BACKEND_API}/auth/signup`, {
             method: "POST",
             headers: {
               "Content-Type": "application/json",

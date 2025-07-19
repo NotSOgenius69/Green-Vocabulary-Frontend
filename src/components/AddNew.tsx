@@ -17,7 +17,7 @@ const AddNew = () => {
     };
 
     try {
-      const response = await fetch("https://green-vocabulary-backend.onrender.com/add-new", {
+      const response = await fetch(`${import.meta.env.VITE_BACKEND_API}/add-new`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
