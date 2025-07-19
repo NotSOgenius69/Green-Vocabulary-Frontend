@@ -30,6 +30,7 @@ const Login = () => {
     
           if (response.ok) {
             localStorage.setItem("token",result.token);
+            localStorage.setItem("user",JSON.stringify(result.user));
             window.dispatchEvent(new Event('authChanged'));
             toast.success(result.message);
             form.reset();
